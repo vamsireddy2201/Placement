@@ -1,0 +1,24 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main()
+{
+    string s,d[30];
+    
+    int k;
+    
+    cin>>s;
+    cin>>k;
+    ll l = s.length();
+    d[l-1]=s[l-1];
+    
+    for(int i=l-2;i>=0;i--){
+        d[i] = s[i] + d[i+1];
+    }
+    
+    sort(d,d+l);
+    
+    cout<<d[k-1]<<endl;
+}
