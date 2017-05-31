@@ -1,0 +1,37 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    int t;
+    ll n;
+    cin>>t;
+    int freq[1000005] = {0};
+    
+    while(t--){
+        cin>>n;
+        int a;
+        vector<int> v;
+        
+        for(int i=0;i<n;i++){
+            cin>>a;
+            freq[a]+=1;
+        }
+        
+        for(int i=1;i<1000000;i++){
+            if(freq[i]!=0){
+                v.push_back(freq[i]);
+            }
+        }
+        sort(v.begin(),v.end());
+        int l=v.size();
+        
+        if(l==1)
+        cout<<"-1"<<endl;
+        else
+        cout<<v[l-1]-v[0]<<endl;
+        
+        memset(freq,0,sizeof(freq));
+    }
+}
