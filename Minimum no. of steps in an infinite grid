@@ -1,0 +1,22 @@
+int Solution::coverPoints(vector<int> &x, vector<int> &y) {
+    if(x.size()<=1)
+        return 0;
+        
+    assert(x.size()==y.size());
+    int currx = x[0];
+    int curry = y[0];
+    int steps = 0;
+    int j,k;
+    for(int i=1;i<y.size();i++){
+        j = abs(x[i]-currx);
+        k = abs(y[i]-curry);
+        
+        currx = x[i];
+        curry = y[i];
+        if(j>=k)
+            steps = steps + j;
+        else 
+            steps = steps + k;
+    }
+    return steps;
+}
