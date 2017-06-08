@@ -1,0 +1,14 @@
+vector<int> Solution::wave(vector<int> &A) {
+    sort(A.begin(),A.end());
+    
+    vector <int> ans;
+    for(int i=1;i<A.size();i=i+2){
+        ans.push_back(A[i]);
+        ans.push_back(A[i-1]);
+    }
+    
+    if(A.size()%2==1)
+        ans.push_back(A[A.size()-1]);
+    
+    return ans;
+}
