@@ -1,0 +1,24 @@
+#define ll long long int
+vector<int> Solution::repeatedNumber(const vector<int> &A) {
+   ll s=A.size();
+   ll sumofn = (s*(s+1))/2;
+   ll sumofn2 = (s*(s+1)*(2*s+1))/6;
+   ll m=0;ll r=0;
+   for(int i=0;i<s;i++){
+       sumofn = sumofn - A[i];
+       sumofn2 = sumofn2 - ((ll)A[i]*(ll)A[i]);
+   }
+   
+   m = (sumofn + (sumofn2/sumofn))/2;
+   r = m-sumofn;
+   
+   vector <int> ans;
+   ans.push_back(r);
+   ans.push_back(m);
+   
+   return ans;
+   
+}
+
+Note - Typecasting cause A[i]*A[i] will give a huge value. So you need to typecast so that no error occurs. 
+Avoiding Overflow is Optimum. 
