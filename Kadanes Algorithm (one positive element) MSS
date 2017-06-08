@@ -1,0 +1,13 @@
+int MaxSubArraySum(int A[],int n){
+  int ans = 0,sum = 0;
+  for(int i = 0;i<n;i++){
+    if(sum + A[i]>0)
+      sum = sum + A[i];
+    else 
+      sum = 0;
+    ans = max(ans,sum);
+  }
+  return ans;
+}
+
+Note - This is only useful if this has a positive element in it. 
