@@ -21,3 +21,6 @@ int Solution::maxSubArray(const vector<int> &arr) {
     
     
 }
+
+Note - This is the best possible method for the Maximum Sum Sub Array. Time Complexity of O(n). 
+Applies for negetive numbers too. 
