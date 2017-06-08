@@ -1,0 +1,17 @@
+int Solution::repeatedNumber(const vector<int> &A) {
+    vector <bool> a(A.size());
+    fill(a.begin(),a.end(),true);
+    
+    for(int i=0;i<A.size();i++){
+        if(a[A[i]])
+            a[A[i]] = false;
+        else 
+            return A[i];
+    }
+    
+    
+    
+}
+
+
+Note - Can be modified to find all the duplicates in an array. 
