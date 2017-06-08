@@ -1,0 +1,23 @@
+int Solution::maxSubArray(const vector<int> &arr) {
+    int l = arr.size();
+    
+    if(l == 1)
+        return arr[0];
+        
+    int max = 0;
+    int ans = arr[0];
+    
+    for(int i=0;i<l;i++){
+        max = max + arr[i];
+        if(max<arr[i])
+            max = arr[i];
+        
+        if(ans<max)
+            ans = max;
+            
+    }
+    
+    return ans;
+    
+    
+}
