@@ -19,7 +19,7 @@ vector<int> Solution::subUnsort(vector<int> &A) {
     int mn = A[i+1];
     int mx = A[i+1];
     
-    for(int k=i;k<j;k++){
+    for(int k=i;k<=j;k++){
         mn = min(mn,A[k]);
         mx = max(mx,A[k]);
         
