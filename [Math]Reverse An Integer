@@ -1,0 +1,24 @@
+#define ll long long
+
+int Solution::reverse(int A) {
+    ll int sign = 0;
+    ll int c = 0;
+    if(A<0)
+        sign = 1;
+        
+    ll int B = (A);
+    B = abs(B);
+    
+    while(B!=0){
+        c = (ll)(c*10 + B%10);
+        B = B/10;
+    }
+    
+    if(sign)
+        c = -c;
+        
+    if(c<INT_MIN || c>INT_MAX)
+        return 0;
+        
+    return c;
+}    
