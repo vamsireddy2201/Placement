@@ -1,0 +1,29 @@
+void Solution::nextPermutation(vector<int> &A) {
+    int n = A.size();
+    int i,j;
+    
+    if(A.size()==1)
+        return;
+    
+    for( i=n-2; i>=0;i--)
+        if(A[i] < A[i+1])break;
+            
+    
+    if(i==-1){
+        sort(A.begin(),A.end());
+        return;
+    }
+    
+    int x=A[i];
+    int small = i+1;
+    
+    for(int j=n-1;j>i;j--){
+        if(A[j]>x && A[small]>A[j])
+            small = j;
+    }
+    
+    swap(A[i],A[small]);
+    
+    sort(A.begin()+i+1,A.end());
+    return;
+}
