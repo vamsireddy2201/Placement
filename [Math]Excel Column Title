@@ -1,0 +1,21 @@
+string Solution::convertToTitle(int A) {
+    string ans = "";
+    while(A!=0){
+        
+        int temp = A%26;
+        if(temp == 0){
+            ans = ans + 'Z';
+            A--;
+        }
+        
+        else{
+            ans.push_back('A' + temp-1);
+        }
+        
+        A = A/26;
+        
+    }
+    
+    reverse(ans.begin(),ans.end());
+    return ans;
+}
